@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NativeBaseProvider, extendTheme } from "native-base";
+import CoffeeListScreen from "./screens/CoffeeListScreen";
+
+const config = {
+  useSystemColorMode: false,
+  initialColorMode: "light",
+};
+
+export const theme = extendTheme({ config });
+type MyThemeType = typeof theme;
+declare module "native-base" {
+  interface ICustomTheme extends MyThemeType {}
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider>
+      <CoffeeListScreen />
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
