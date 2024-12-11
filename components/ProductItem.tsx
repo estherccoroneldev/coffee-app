@@ -19,21 +19,20 @@ export interface Product extends ViewProps {
 const ProductItem: React.FC<Product> = ({ title, description, image }) => {
   return (
     <Box
-      maxW="sm"
       rounded="lg"
       overflow="hidden"
-      borderColor="yellow.200"
+      borderColor="#FFFFFF"
       borderWidth="1"
       my={2}
       _dark={{
-        backgroundColor: "amber.700",
+        backgroundColor: "#edd6c8",
       }}
       _web={{
         shadow: 2,
         borderWidth: 0,
       }}
       _light={{
-        backgroundColor: "amber.100",
+        backgroundColor: "#FFFFFF",
       }}
     >
       <HStack space={1}>
@@ -47,10 +46,10 @@ const ProductItem: React.FC<Product> = ({ title, description, image }) => {
           />
         </AspectRatio>
         <VStack p={4} maxWidth="70%">
-          <Heading color="amber.900" size="md">
+          <Heading color="#242424" size="md">
             {title}
           </Heading>
-          <Text color="yellow.700" numberOfLines={4} fontWeight="400">
+          <Text color="#A2A2A2" numberOfLines={4} fontWeight="400">
             {description}
           </Text>
         </VStack>

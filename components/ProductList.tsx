@@ -11,7 +11,8 @@ interface ProductListProps {
 const ProductList: React.FC<ProductListProps> = ({ data, renderProduct }) => {
   return (
     <FlatList
-      style={{ flex: 1, padding: 16 }}
+      contentContainerStyle={{ paddingBottom: 48 }}
+      px={8}
       showsVerticalScrollIndicator={false}
       data={data}
       renderItem={renderProduct}

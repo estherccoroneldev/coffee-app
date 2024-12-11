@@ -1,5 +1,5 @@
-import { Input, IPinInputProps } from "native-base";
-
+import { Icon, Input, IPinInputProps } from "native-base";
+import { Feather } from "@expo/vector-icons";
 interface SearchItemProps extends IPinInputProps {
   handleChange: (text: string) => void;
 }
@@ -13,20 +13,27 @@ const SearchItem: React.FC<SearchItemProps> = ({
     <Input
       mx={4}
       my={2}
+      p={4}
       placeholder={placeholder}
-      placeholderTextColor="amber.400"
-      variant="rounded"
+      placeholderTextColor="muted.400"
+      variant="outlined"
+      size="xl"
+      borderRadius={12}
       onChangeText={handleChange}
-      borderColor="yellow.200"
+      borderColor="muted.600"
+      focusOutlineColor="muted.600"
+      InputLeftElement={
+        <Icon as={Feather} name="search" size={6} ml="4" color="muted.400" />
+      }
       _dark={{
-        backgroundColor: "amber.700",
+        backgroundColor: "muted.900",
       }}
       _web={{
         shadow: 2,
         borderWidth: 0,
       }}
       _light={{
-        backgroundColor: "amber.100",
+        backgroundColor: "muted.600",
       }}
       {...props}
     />
