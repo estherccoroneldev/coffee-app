@@ -1,8 +1,8 @@
-import React from "react";
-import { Product } from "../components/ProductItem";
-import axios from "axios";
+import React from 'react';
+import { Product } from '../components/ProductItem';
+import axios from 'axios';
 
-const BASE_URL = "https://api.sampleapis.com/coffee/hot";
+const BASE_URL = 'https://api.sampleapis.com/coffee/hot';
 
 const useCoffeeList = ({ searchText }: { searchText: string }) => {
   const [products, setProducts] = React.useState<Product[]>([]);
@@ -21,12 +21,12 @@ const useCoffeeList = ({ searchText }: { searchText: string }) => {
   };
 
   const filteredList = React.useMemo(() => {
-    return searchText === ""
+    return searchText === ''
       ? products || []
       : [...(products ?? [])].filter((product) =>
           product?.title
             .toLocaleLowerCase()
-            .includes(searchText.toLocaleLowerCase())
+            .includes(searchText.toLocaleLowerCase()),
         );
   }, [searchText, products]);
 

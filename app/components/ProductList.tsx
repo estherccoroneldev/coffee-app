@@ -1,7 +1,7 @@
-import { FlatList } from "native-base";
-import React from "react";
-import { Product } from "./ProductItem";
-import { ListRenderItem } from "react-native";
+import { FlatList } from 'native-base';
+import React from 'react';
+import { Product } from './ProductItem';
+import { ListRenderItem } from 'react-native';
 
 interface ProductListProps {
   data: Product[];

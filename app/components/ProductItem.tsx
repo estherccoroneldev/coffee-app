@@ -6,9 +6,9 @@ import {
   Image,
   Text,
   VStack,
-} from "native-base";
-import React from "react";
-import { ViewProps } from "react-native";
+} from 'native-base';
+import React from 'react';
+import { ViewProps } from 'react-native';
 
 export interface Product extends ViewProps {
   title: string;
@@ -25,14 +25,14 @@ const ProductItem: React.FC<Product> = ({ title, description, image }) => {
       borderWidth="1"
       my={2}
       _dark={{
-        backgroundColor: "#edd6c8",
+        backgroundColor: '#edd6c8',
       }}
       _web={{
         shadow: 2,
         borderWidth: 0,
       }}
       _light={{
-        backgroundColor: "#FFFFFF",
+        backgroundColor: '#FFFFFF',
       }}
     >
       <HStack space={1}>
