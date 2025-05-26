@@ -1,10 +1,10 @@
-import { Center, Heading, VStack, Image, View } from 'native-base';
+import { Center, Heading, Image, View, VStack } from 'native-base';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import SearchItem from '../../components/SearchItem';
-import ProductList from '../../components/ProductList';
-import ProductItem, { Product } from '../../components/ProductItem';
 import { ListRenderItem } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import ProductItem, { Product } from '../../components/ProductItem';
+import ProductList from '../../components/ProductList';
+import SearchItem from '../../components/SearchItem';
 import useCoffeeList from '../../hooks/useCoffeeList';
 
 const PAGE_TITLE = 'The Coffee List!';
@@ -16,13 +16,9 @@ const renderProduct: ListRenderItem<Product> = ({ item }) => (
 const CoffeeListScreen: React.FC = () => {
   const [searchValue, setSearchValue] = React.useState('');
 
-  const { filteredList, getProducts, loading } = useCoffeeList({
+  const { filteredList } = useCoffeeList({
     searchText: searchValue,
   });
-
-  React.useEffect(() => {
-    getProducts();
-  }, []);
 
   const handleChange = (text: string) => setSearchValue(text);
 

@@ -1,6 +1,6 @@
+import axios from 'axios';
 import React from 'react';
 import { Product } from '../components/ProductItem';
-import axios from 'axios';
 
 const BASE_URL = 'https://api.sampleapis.com/coffee/hot';
 
@@ -19,6 +19,10 @@ const useCoffeeList = ({ searchText }: { searchText: string }) => {
       setLoading(false);
     }
   };
+
+  React.useEffect(() => {
+    getProducts();
+  }, []);
 
   const filteredList = React.useMemo(() => {
     return searchText === ''
